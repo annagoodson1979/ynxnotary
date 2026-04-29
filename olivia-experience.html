@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Olivia’s Experience</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: linear-gradient(to bottom, #fff5f8, #ffffff);
+    }
+
+    .gate {
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .box {
+      max-width: 400px;
+    }
+
+    h1 {
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .content {
+      padding: 40px 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="gate" id="gate">
+    <div class="box">
+      <h1>Olivia’s Experience 💕</h1>
+      <p style="margin-top:5px;">
+        This space is for invited guests only.
+      </p>
+
+      <input type="password" id="pass" placeholder="Enter access code" />
+      <button onclick="checkPassword()">Enter ✨</button>
+
+      <p style="font-size:12px; margin-top:15px;">
+        A private experience shared with close friends.
+      </p>
+    </div>
+  </div>
+
+  <div class="content hidden" id="content">
+    <h2>Welcome ✨</h2>
+    <p>This is Olivia’s space… add your involvement, school, memories here.</p>
+  </div>
+
+  <script>
+    const password = "liv";
+
+    function checkPassword() {
+      const input = document.getElementById("pass").value;
+
+      if (input === password) {
+        document.getElementById("gate").style.display = "none";
+        document.getElementById("content").classList.remove("hidden");
+      } else {
+        alert("Access code incorrect 💔");
+      }
+    }
+  </script>
+
+</body>
+</html>
