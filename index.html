@@ -1,326 +1,307 @@
-import NotaryFrame from '../components/NotaryFrame';
-import type { Page } from '../types';
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YNX Notary</title>
+    <meta
+      name="description"
+      content="Mobile, remote, and electronic notarization with a polished signing experience across DFW and eligible remote appointments."
+    />
+    <style>
+      :root {
+        --bg: #040404;
+        --panel: rgba(12, 12, 12, 0.9);
+        --text: #f4efe8;
+        --muted: #b8b0a4;
+        --gold: #d4af37;
+        --border: rgba(212, 175, 55, 0.24);
+      }
 
-interface ServicesProps {
-  onNavigate: (page: Page) => void;
-}
+      * {
+        box-sizing: border-box;
+      }
 
-const serviceSections = [
-  {
-    title: 'Remote Online Notary (RON)',
-    eyebrow: 'Anywhere in the U.S. (Preferred)',
-    body: [
-      'Remote Online Notarization offers a secure and convenient alternative to in-person appointments. While the fee is comparable to mobile service, many clients save significantly by avoiding travel time, fuel costs, parking, and time away from work.',
-    ],
-    highlights: [
-      'Flat fee: $35',
-      'Where: Anywhere in the U.S.',
-      'Includes identity verification, notarization, and secure digital delivery',
-    ],
-  },
-  {
-    title: 'Document Prep & Organization',
-    body: ['Professional document preparation services to help ensure everything is in order before signing.'],
-    highlights: [
-      'Document Prep (non-legal): $5 per page',
-      'Page Re-Ordering & Organizing: $5-$10 per set',
-      'Secure Document Sleeve: $3',
-    ],
-  },
-  {
-    title: 'Electronic Signature Assistance (Non-Notarized)',
-    body: [
-      'Assistance uploading and completing electronic signatures for documents that do not require notarization.',
-    ],
-    highlights: [
-      '$25 per document',
-      'Uploading the document to an e-signature platform',
-      'Guiding the signer through the signing process',
-      'Ensuring all required signature fields are completed',
-    ],
-    note: 'This service does not include notarization. Documents requiring notarization must be completed in person or through an approved RON platform.',
-  },
-  {
-    title: 'Agreement / Contract Signing',
-    body: ['Standard notarizations for agreements and contracts. Multi-party or complex documents are welcome.'],
-    highlights: ['RON: $35', 'In-person: $25', 'After-hours: +$30', 'Emergency: +$50'],
-  },
-  {
-    title: 'Deposit & No-Show Policy',
-    body: ['To support reliable scheduling, deposits are required for certain bookings.'],
-    bulletPoints: [
-      'Mobile appointments require a 50% reservation deposit to secure your time and travel (if applicable).',
-      'Deposits are non-refundable if you cancel within 12 hours or no-show.',
-      'No-shows forfeit the deposit and may require full prepay for future bookings.',
-      'Life happens and if you need to reschedule, please give at least 12+ hours notice and the deposit transfers.',
-    ],
-    closing: 'Documented emergencies are considered case-by-case.',
-  },
-  {
-    title: 'Booking & Scheduling Tips',
-    body: ['A few simple guidelines help the appointment stay smooth and efficient.'],
-    bulletPoints: [
-      'After-hours and weekends: Higher fees apply and availability is limited.',
-      'Have documents ready and IDs valid before the appointment.',
-      'Witnesses for in-person notarizations must be provided by the signer when applicable.',
-    ],
-  },
-];
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Montserrat, Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top, rgba(212, 175, 55, 0.1), transparent 28%),
+          linear-gradient(180deg, #050505 0%, #000 72%);
+      }
 
-function Services({ onNavigate }: ServicesProps) {
-  const gold = '#d4af37';
-  const goldSoft = '#e8d5a3';
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
 
-  return (
-    <NotaryFrame
-      onNavigate={onNavigate}
-      title="Services and Prices"
-      subtitle="How I can help with your notary needs"
-      backTo="home"
-    >
-      <div style={{ display: 'grid', gap: '18px', maxWidth: '860px', margin: '0 auto', width: '100%' }}>
-        <p
-          style={{
-            margin: '0 auto 2px',
-            color: '#d4af37',
-            textTransform: 'uppercase',
-            letterSpacing: '1.1px',
-            fontSize: '0.8rem',
-            textAlign: 'center',
-          }}
-        >
-          Remote Notary Preferred | Mobile by Exception (Local & Appointment Only)
-        </p>
-        <section
-          className="info-hover-card"
-          style={{
-            background: 'rgba(255,255,255,0.02)',
-            border: '1px solid rgba(255,255,255,0.08)',
-            borderRadius: '18px',
-            padding: '20px',
-            textAlign: 'center',
-          }}
-        >
-          <p style={{ margin: 0, color: '#cfc8bc', lineHeight: 1.7 }}>
-            Use these quick links to go where you need in one click.
+      .shell {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 28px 0 42px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 24px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand img {
+        width: 66px;
+        height: 66px;
+        object-fit: cover;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: #0b0b0b;
+      }
+
+      .brand-copy {
+        display: grid;
+        gap: 3px;
+      }
+
+      .brand-copy strong {
+        font-size: 0.92rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 600;
+      }
+
+      .brand-copy span {
+        color: var(--muted);
+        font-size: 0.74rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .nav a,
+      .cta,
+      .card-cta {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 11px 18px;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.02);
+        transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+      }
+
+      .nav a:hover,
+      .cta:hover,
+      .card-cta:hover {
+        transform: translateY(-1px);
+        border-color: rgba(212, 175, 55, 0.55);
+        color: var(--gold);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(280px, 540px) minmax(320px, 1fr);
+        gap: 36px;
+        align-items: center;
+      }
+
+      .hero-image {
+        min-height: 600px;
+        border-radius: 28px;
+        background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.55)),
+          url('https://annalico.com/images/hero.jpg') center/cover no-repeat;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      }
+
+      .hero-copy {
+        display: grid;
+        gap: 18px;
+      }
+
+      .eyebrow {
+        margin: 0;
+        color: var(--gold);
+        font-size: 0.72rem;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: "Cinzel", Georgia, serif;
+        font-size: clamp(2.8rem, 6vw, 5rem);
+        font-weight: 400;
+        line-height: 0.98;
+        letter-spacing: 0.08em;
+        color: var(--gold);
+        text-transform: uppercase;
+      }
+
+      .subhead {
+        margin: 0;
+        font-size: 0.95rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .divider {
+        width: 118px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.35);
+      }
+
+      .hero-copy p {
+        margin: 0;
+        color: #d7d1c8;
+        line-height: 1.8;
+        max-width: 58ch;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 4px;
+      }
+
+      .cta.primary {
+        background: rgba(212, 175, 55, 0.14);
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px;
+        margin-top: 32px;
+      }
+
+      .card {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 22px;
+        background: var(--panel);
+        padding: 24px;
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+      }
+
+      .card h2 {
+        margin: 0 0 10px;
+        font-size: 0.88rem;
+        color: var(--gold);
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .card-cta {
+        display: inline-block;
+        margin-top: 16px;
+      }
+
+      footer {
+        margin-top: 34px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        color: #cabdbf;
+        font-size: 0.82rem;
+        text-align: center;
+      }
+
+      @media (max-width: 940px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-image {
+          min-height: 460px;
+        }
+
+        .topbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <img src="https://annalico.com/images/logo.jpg" alt="YNX Notary logo" />
+          <div class="brand-copy">
+            <strong>YNX Notary</strong>
+            <span>Mobile, Remote, & Electronic Notarization</span>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="https://forms.gle/MmmsrGioJmUTPw228" target="_blank" rel="noreferrer">Book Appointment</a>
+          <a href="https://forms.gle/3WPpapCWvWPKJ8QJ6" target="_blank" rel="noreferrer">Lender Intake</a>
+          <a href="mailto:notary@annalico.com">Contact</a>
+        </nav>
+      </header>
+
+      <main class="hero">
+        <div class="hero-image" aria-hidden="true"></div>
+        <section class="hero-copy">
+          <p class="eyebrow">Seal and Stamp Notary</p>
+          <h1>YNX<br />Notary</h1>
+          <p class="subhead">NNA Certified Notary Signing Agent | RON | IPEN Available</p>
+          <div class="divider"></div>
+          <p>
+            A polished, guided signing experience for clients, lenders, title teams, and document-heavy appointments.
+            Mobile service is available locally, while eligible files can be completed remotely for a smoother experience.
           </p>
-          <div style={{ marginTop: '12px', display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>
-            <button
-              onClick={() => onNavigate('prices')}
-              style={{
-                border: `1px solid ${gold}`,
-                background: 'rgba(212, 175, 55, 0.1)',
-                color: '#f3efec',
-                borderRadius: '999px',
-                padding: '11px 18px',
-                fontSize: '0.82rem',
-                textTransform: 'uppercase',
-                letterSpacing: '1.3px',
-                cursor: 'pointer',
-                fontWeight: 600,
-              }}
-            >
-              Packages
-            </button>
-            <button
-              onClick={() => onNavigate('how-help')}
-              style={{
-                border: `1px solid ${gold}`,
-                background: 'rgba(212, 175, 55, 0.1)',
-                color: '#f3efec',
-                borderRadius: '999px',
-                padding: '11px 18px',
-                fontSize: '0.82rem',
-                textTransform: 'uppercase',
-                letterSpacing: '1.3px',
-                cursor: 'pointer',
-                fontWeight: 600,
-              }}
-            >
-              How I Can Help
-            </button>
-            <button
-              onClick={() => onNavigate('hire')}
-              style={{
-                border: `1px solid ${gold}`,
-                background: 'rgba(212, 175, 55, 0.1)',
-                color: '#f3efec',
-                borderRadius: '999px',
-                padding: '11px 18px',
-                fontSize: '0.82rem',
-                textTransform: 'uppercase',
-                letterSpacing: '1.3px',
-                cursor: 'pointer',
-                fontWeight: 600,
-              }}
-            >
-              Hire an Agent
-            </button>
+          <div class="cta-row">
+            <a class="cta primary" href="https://forms.gle/MmmsrGioJmUTPw228" target="_blank" rel="noreferrer">Client Appointment Request</a>
+            <a class="cta" href="https://forms.gle/3WPpapCWvWPKJ8QJ6" target="_blank" rel="noreferrer">Lender / Title Intake</a>
+          </div>
+
+          <div class="cards">
+            <article class="card">
+              <h2>General Notary</h2>
+              <p>Everyday documents, acknowledgments, jurats, and guided signing support with a clean professional process.</p>
+            </article>
+            <article class="card">
+              <h2>Signing Agent</h2>
+              <p>Support for lenders, title, and escrow teams who need reliable communication, organized signings, and clear follow-through.</p>
+            </article>
+            <article class="card">
+              <h2>Remote Eligible Files</h2>
+              <p>When document type and file instructions allow it, RON can reduce travel friction and keep the signing experience efficient.</p>
+              <a class="card-cta" href="mailto:notary@annalico.com?subject=YNX%20Notary%20Question">Ask a Question</a>
+            </article>
           </div>
         </section>
+      </main>
 
-        {serviceSections.map((section) => (
-          <section
-            className="info-hover-card"
-            key={section.title}
-            style={{
-              background: 'rgba(255,255,255,0.02)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              borderRadius: '18px',
-              padding: '24px',
-              textAlign: 'center',
-            }}
-          >
-            <h2
-              style={{
-                margin: '0 0 10px',
-                color: gold,
-                fontWeight: 500,
-                letterSpacing: '2px',
-                textTransform: 'uppercase',
-                fontSize: '1.08rem',
-                fontFamily: "'Cinzel', serif",
-              }}
-            >
-              {section.title}
-            </h2>
-
-            {section.eyebrow ? (
-              <p
-                style={{
-                  margin: '0 0 12px',
-                  color: goldSoft,
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontSize: '0.56rem',
-                  letterSpacing: '1.8px',
-                  textTransform: 'uppercase',
-                }}
-              >
-                {section.eyebrow}
-              </p>
-            ) : null}
-
-            {section.body.map((paragraph) => (
-              <p
-                key={paragraph}
-                style={{
-                  margin: '0 0 12px',
-                  color: '#d5d0c8',
-                  lineHeight: 1.75,
-                  maxWidth: '58ch',
-                  marginInline: 'auto',
-                }}
-              >
-                {paragraph}
-              </p>
-            ))}
-
-            {section.bulletPoints?.length ? (
-              <ul
-                style={{
-                  margin: '6px auto 0',
-                  paddingLeft: '20px',
-                  color: '#beb7aa',
-                  lineHeight: 1.7,
-                  maxWidth: '60ch',
-                  textAlign: 'left',
-                }}
-              >
-                {section.bulletPoints.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            ) : null}
-
-            {section.highlights?.length && section.title === 'Agreement / Contract Signing' ? (
-              <div
-                style={{
-                  margin: '6px auto 0',
-                  maxWidth: '60ch',
-                  display: 'grid',
-                  gridTemplateColumns: '1fr 1fr',
-                  gap: '12px',
-                  textAlign: 'left',
-                }}
-              >
-                <ul
-                  style={{
-                    margin: 0,
-                    paddingLeft: '20px',
-                    color: '#beb7aa',
-                    lineHeight: 1.7,
-                  }}
-                >
-                  {section.highlights.slice(0, 2).map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-                <ul
-                  style={{
-                    margin: 0,
-                    paddingLeft: '20px',
-                    color: '#beb7aa',
-                    lineHeight: 1.7,
-                  }}
-                >
-                  {section.highlights.slice(2).map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-
-            {section.highlights?.length && section.title !== 'Agreement / Contract Signing' ? (
-              <ul
-                style={{
-                  margin: '6px auto 0',
-                  paddingLeft: '20px',
-                  color: '#beb7aa',
-                  lineHeight: 1.7,
-                  maxWidth: '60ch',
-                  textAlign: 'left',
-                }}
-              >
-                {section.highlights.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            ) : null}
-
-            {section.closing ? (
-              <p
-                style={{
-                  margin: '12px auto 0',
-                  color: '#b9b2a5',
-                  lineHeight: 1.7,
-                  maxWidth: '58ch',
-                }}
-              >
-                {section.closing}
-              </p>
-            ) : null}
-
-            {section.note ? (
-              <p
-                style={{
-                  margin: '14px auto 0',
-                  color: '#a49d90',
-                  lineHeight: 1.65,
-                  maxWidth: '58ch',
-                  fontSize: '0.95rem',
-                  fontStyle: 'italic',
-                }}
-              >
-                {section.note}
-              </p>
-            ) : null}
-          </section>
-        ))}
-
-      </div>
-    </NotaryFrame>
-  );
-}
-
-export default Services;
-
+      <footer>
+        notary@annalico.com | Serving DFW locally and eligible remote appointments nationwide
+      </footer>
+    </div>
+  </body>
+</html>
