@@ -3,6 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <title>Olivia’s Experience</title>
+  <script>
+    const password = "OG-POP"; // simple shared word
+    const input = prompt("Enter access code 💕");
+
+    if (input !== password) {
+      document.body.innerHTML = `
+        <div style="text-align:center; margin-top:60px; font-family:Georgia;">
+          <h2>Access Limited</h2>
+          <p>This experience is for invited guests only.</p>
+        </div>
+      `;
+    }
+  </script>
   <style>
     body {
       margin: 0;
@@ -83,8 +96,6 @@
   </div>
 
   <script>
-    const password = "liv";
-
     function checkPassword() {
       const input = document.getElementById("pass").value;
 
