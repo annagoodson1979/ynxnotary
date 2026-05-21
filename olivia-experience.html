@@ -1,112 +1,82 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8" />
-  <title>Olivia’s Experience</title>
-  <script>
-    const password = "OG-POP"; // simple shared word
-    const input = prompt("Enter access code 💕");
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olivia's Experience | YNX Notary</title>
+    <meta
+      name="description"
+      content="A private family notary keepsake experience for Olivia's friends and families."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="olivia-page-body">
+    <main class="olivia-landing">
+      <div class="olivia-glitter-field" aria-hidden="true">
+        <div class="fairy-sweep">✦</div>
+        <span class="dust dust-1"></span>
+        <span class="dust dust-2"></span>
+        <span class="dust dust-3"></span>
+        <span class="dust dust-4"></span>
+        <span class="dust dust-5"></span>
+        <span class="dust dust-6"></span>
+        <span class="dust dust-7"></span>
+        <span class="dust dust-8"></span>
+        <span class="dust dust-9"></span>
+        <span class="dust dust-10"></span>
+        <span class="dust dust-11"></span>
+        <span class="dust dust-12"></span>
+        <span class="dust dust-13"></span>
+        <span class="dust dust-14"></span>
+        <span class="dust dust-15"></span>
+        <span class="dust dust-16"></span>
+      </div>
 
-    if (input !== password) {
-      document.body.innerHTML = `
-        <div style="text-align:center; margin-top:60px; font-family:Georgia;">
-          <h2>Access Limited</h2>
-          <p>This experience is for invited guests only.</p>
+      <section class="olivia-card">
+        <p class="olivia-pill">Olivia's little thank-you experience</p>
+        <h1>A sweet family keepsake made just for Olivia's friends & families.</h1>
+        <p class="olivia-copy">
+          Choose a fun memory to make official: love notes, family promises, pet keepsakes,
+          or fun milestone certificates. Use code <strong>OG-POP</strong> for 15% off after approval.
+        </p>
+
+        <div class="olivia-actions">
+          <a class="cta primary" href="https://forms.gle/YOUR-OLIVIA-REQUEST-FORM" target="_blank" rel="noreferrer">
+            Open Olivia Request Form
+          </a>
+          <a class="cta" href="index.html">Regular Notary Services</a>
         </div>
-      `;
-    }
-  </script>
-  <style>
-    body {
-      margin: 0;
-      font-family: Georgia, serif;
-      background: linear-gradient(to bottom, #fff5f8, #ffffff);
-    }
 
-    .gate {
-      display: flex;
-      height: 100vh;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-    }
+        <div class="olivia-note">
+          Official notarizations require a signer who is 18 or older with valid ID. A parent
+          or guardian must be present for minors when applicable.
+        </div>
+      </section>
 
-    .box {
-      max-width: 400px;
-    }
+      <section class="olivia-ideas" aria-label="Olivia experience ideas">
+        <article>
+          <h2>Love Notes & Letters</h2>
+          <p>I love you notes, thank-you letters, encouragement, or sweet words to someone special.</p>
+        </article>
+        <article>
+          <h2>Family Promises</h2>
+          <p>Family vows, memory notes, or heartfelt words you want to keep.</p>
+        </article>
+        <article>
+          <h2>Pet Paw Promise</h2>
+          <p>A playful keepsake with your pet, a paw print, photo, or forever-friend promise.</p>
+        </article>
+        <article>
+          <h2>Kid CEO Certificate</h2>
+          <p>A fun official-feeling certificate for goals, chores, little dreams, or milestones.</p>
+        </article>
+      </section>
+    </main>
 
-    h1 {
-      font-weight: normal;
-      margin-bottom: 10px;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      margin-top: 15px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      font-size: 16px;
-      text-align: center;
-    }
-
-    button {
-      margin-top: 15px;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 25px;
-      background: #000;
-      color: #fff;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .content {
-      padding: 40px 20px;
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="gate" id="gate">
-    <div class="box">
-      <h1>Olivia’s Experience 💕</h1>
-      <p style="margin-top:5px;">
-        This space is for invited guests only.
-      </p>
-
-      <input type="password" id="pass" placeholder="Enter access code" />
-      <button onclick="checkPassword()">Enter ✨</button>
-
-      <p style="font-size:12px; margin-top:15px;">
-        A private experience shared with close friends.
-      </p>
-    </div>
-  </div>
-
-  <div class="content hidden" id="content">
-    <h2>Welcome ✨</h2>
-    <p>This is Olivia’s space… add your involvement, school, memories here.</p>
-  </div>
-
-  <script>
-    function checkPassword() {
-      const input = document.getElementById("pass").value;
-
-      if (input === password) {
-        document.getElementById("gate").style.display = "none";
-        document.getElementById("content").classList.remove("hidden");
-      } else {
-        alert("Access code incorrect 💔");
+    <script>
+      if (sessionStorage.getItem("ynxOliviaPromoUnlocked") !== "true") {
+        window.location.replace("promo.html");
       }
-    }
-  </script>
-
-</body>
+    </script>
+  </body>
 </html>
