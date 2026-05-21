@@ -37,17 +37,29 @@ a {
   padding: 28px 0 42px;
 }
 
+.home-page {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home-page .shell {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 16px 0 18px;
+}
+
 .topbar {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 18px;
 }
 
 .nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 10px;
+  gap: 7px;
 }
 
 .nav a,
@@ -56,10 +68,10 @@ a {
 .card-cta {
   border: 1px solid var(--border);
   border-radius: 999px;
-  padding: 11px 18px;
-  font-size: 0.7rem;
+  padding: 9px 12px;
+  font-size: 0.62rem;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.13em;
   color: var(--text);
   background: rgba(255, 255, 255, 0.02);
   transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
@@ -88,15 +100,16 @@ a {
 
 .hero {
   display: grid;
-  gap: 22px;
+  gap: 16px;
   justify-items: center;
   text-align: center;
-  padding: 12px 0 6px;
+  align-content: center;
+  padding: 0;
 }
 
 .brand-mark {
-  width: 92px;
-  height: 92px;
+  width: 82px;
+  height: 82px;
   object-fit: cover;
   border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -124,8 +137,8 @@ h1 {
 
 .subhead {
   margin: 0;
-  font-size: 0.92rem;
-  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -139,7 +152,7 @@ h1 {
 
 .hero-copy {
   display: grid;
-  gap: 18px;
+  gap: 14px;
   justify-items: center;
 }
 
@@ -820,10 +833,10 @@ h1 {
 }
 
 footer {
-  margin-top: 34px;
-  padding-top: 18px;
+  margin-top: 24px;
+  padding-top: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  color: #cabdbf;
+  color: #bda263;
   font-size: 0.82rem;
   text-align: center;
 }
@@ -834,16 +847,47 @@ footer {
   justify-content: center;
   gap: 8px 16px;
   letter-spacing: 0.08em;
+  color: #bda263;
 }
 
 .business-footer span:not(:last-child)::after {
   content: "|";
   margin-left: 16px;
-  color: rgba(212, 175, 55, 0.36);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.scroll-rail {
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  z-index: 30;
+  display: grid;
+  gap: 10px;
+  transform: translateY(-50%);
+}
+
+.scroll-rail a {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.46);
+  color: #fff;
+  font-size: 1.05rem;
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.scroll-rail a:hover {
+  border-color: rgba(255, 255, 255, 0.72);
+  color: var(--gold);
 }
 
 @media (max-width: 940px) {
   .nav {
+    flex-wrap: wrap;
     justify-content: center;
   }
 
