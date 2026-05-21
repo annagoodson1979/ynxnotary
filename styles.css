@@ -164,6 +164,13 @@ h1 {
   background: rgba(212, 175, 55, 0.14);
 }
 
+.cta.start {
+  border-color: rgba(212, 175, 55, 0.72);
+  background: rgba(212, 175, 55, 0.18);
+  color: var(--gold);
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.12);
+}
+
 .cards,
 .grid-2,
 .grid-3,
