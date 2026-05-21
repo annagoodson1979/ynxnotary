@@ -885,6 +885,37 @@ footer {
   color: var(--gold);
 }
 
+.help-page .page-title,
+.help-page .section h2,
+.help-page .mini h2,
+.help-page .mini h3 {
+  font-family: Montserrat, Arial, sans-serif !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.16em !important;
+  line-height: 1.22 !important;
+  color: #c9ad68 !important;
+  font-weight: 600 !important;
+}
+
+.help-page .page-title {
+  font-size: clamp(1.9rem, 4vw, 3.2rem) !important;
+}
+
+.help-page .mini h2 {
+  font-size: clamp(1rem, 2vw, 1.28rem) !important;
+}
+
+.help-page .section > section:not(.mini) h2 {
+  font-size: clamp(1.35rem, 3vw, 2.15rem) !important;
+}
+
+.help-page .mini p[style*="Starting"] {
+  font-family: Montserrat, Arial, sans-serif !important;
+  color: #c9ad68 !important;
+  letter-spacing: 0.15em !important;
+  font-size: 0.82rem !important;
+}
+
 @media (max-width: 940px) {
   .nav {
     flex-wrap: wrap;
