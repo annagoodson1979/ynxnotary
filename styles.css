@@ -402,7 +402,8 @@ h1 {
   inset: 0;
   overflow: hidden;
   pointer-events: none;
-  z-index: 0;
+  z-index: 6;
+  mix-blend-mode: normal;
 }
 
 .glitter-curtain,
@@ -432,43 +433,46 @@ h1 {
 
 .fairy-sweep {
   position: absolute;
-  left: -10vw;
-  top: 60vh;
-  width: 120px;
-  height: 120px;
+  left: -16vw;
+  top: 54vh;
+  z-index: 8;
+  width: 220px;
+  height: 220px;
   display: grid;
   place-items: center;
   border-radius: 50%;
   color: #fff7c8;
-  font-size: 4.5rem;
+  font-size: 9rem;
   text-shadow:
     0 0 20px rgba(255, 238, 170, 0.95),
     0 0 56px rgba(255, 182, 213, 0.82);
-  animation: fairySweep 3.4s ease-in-out both;
+  animation: fairySweep 3.2s ease-in-out both;
 }
 
 .fairy-sweep::after {
   content: "";
   position: absolute;
   right: 55%;
-  width: 46vw;
-  height: 38px;
+  width: 72vw;
+  height: 90px;
   border-radius: 999px;
   background: linear-gradient(90deg, transparent, rgba(255, 238, 170, 0.82), rgba(255, 182, 213, 0.44));
-  filter: blur(10px);
+  filter: blur(16px);
 }
 
 .dust {
   position: absolute;
-  width: 12px;
-  height: 12px;
+  z-index: 9;
+  width: 24px;
+  height: 24px;
   border-radius: 999px;
   background: #fff3a8;
   box-shadow:
-    0 0 12px rgba(255, 238, 170, 0.9),
-    0 0 28px rgba(255, 182, 213, 0.75);
+    0 0 18px rgba(255, 255, 255, 0.95),
+    0 0 34px rgba(255, 238, 170, 0.92),
+    0 0 68px rgba(255, 182, 213, 0.82);
   opacity: 0;
-  animation: glitterBurst 5.8s ease-out both;
+  animation: glitterBurst 4.2s ease-out both;
 }
 
 .dust:nth-child(3n) {
@@ -477,6 +481,12 @@ h1 {
 
 .dust:nth-child(4n) {
   background: #d7fff2;
+}
+
+.dust:nth-child(5n) {
+  width: 34px;
+  height: 34px;
+  clip-path: polygon(50% 0, 62% 36%, 100% 50%, 62% 64%, 50% 100%, 38% 64%, 0 50%, 38% 36%);
 }
 
 .dust-1 { left: 50%; top: 48%; --x: -38vw; --y: -31vh; animation-delay: 0.18s; }
@@ -515,6 +525,44 @@ h1 {
 .dust-34 { left: 3%; top: 58%; --x: 92vw; --y: 16vh; animation-delay: 1.35s; animation-duration: 7.2s; }
 .dust-35 { left: 95%; top: 26%; --x: -90vw; --y: 22vh; animation-delay: 1.6s; animation-duration: 7.4s; }
 .dust-36 { left: 96%; top: 72%; --x: -88vw; --y: -20vh; animation-delay: 1.85s; animation-duration: 7.6s; }
+
+.glitter-shard {
+  position: fixed;
+  left: 50%;
+  top: 52%;
+  z-index: 10;
+  width: 52px;
+  height: 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #fff, #ffe88f, #ffb8d0);
+  box-shadow:
+    0 0 24px rgba(255, 238, 170, 0.9),
+    0 0 58px rgba(255, 182, 213, 0.72);
+  opacity: 0;
+  animation: shardThrow 2.5s ease-out both;
+}
+
+.shard-1 { --x: -44vw; --y: -34vh; --r: 220deg; animation-delay: 0.18s; }
+.shard-2 { --x: -26vw; --y: -48vh; --r: 320deg; animation-delay: 0.22s; }
+.shard-3 { --x: 2vw; --y: -44vh; --r: 180deg; animation-delay: 0.26s; }
+.shard-4 { --x: 28vw; --y: -36vh; --r: 280deg; animation-delay: 0.3s; }
+.shard-5 { --x: 48vw; --y: -8vh; --r: 210deg; animation-delay: 0.34s; }
+.shard-6 { --x: 40vw; --y: 26vh; --r: 360deg; animation-delay: 0.38s; }
+.shard-7 { --x: 8vw; --y: 42vh; --r: 260deg; animation-delay: 0.42s; }
+.shard-8 { --x: -24vw; --y: 38vh; --r: 330deg; animation-delay: 0.46s; }
+.shard-9 { --x: -50vw; --y: 14vh; --r: 230deg; animation-delay: 0.5s; }
+.shard-10 { --x: 0vw; --y: 0vh; --r: 180deg; width: 90px; height: 90px; border-radius: 50%; animation-delay: 0.12s; }
+
+.glitter-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 7;
+  opacity: 0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.72), transparent 18%),
+    radial-gradient(circle at 50% 50%, rgba(255, 238, 170, 0.48), transparent 36%);
+  animation: glitterFlash 1.45s ease-out both;
+}
 
 .olivia-card {
   position: relative;
@@ -669,7 +717,7 @@ h1 {
 @keyframes fairySweep {
   0% {
     opacity: 0;
-    transform: translate(0, 0) rotate(-18deg) scale(0.7);
+    transform: translate(0, 0) rotate(-18deg) scale(0.55);
   }
   18% {
     opacity: 1;
@@ -679,7 +727,7 @@ h1 {
   }
   100% {
     opacity: 0;
-    transform: translate(122vw, -78vh) rotate(10deg) scale(1.1);
+    transform: translate(128vw, -70vh) rotate(10deg) scale(1.35);
   }
 }
 
@@ -688,12 +736,51 @@ h1 {
     opacity: 0;
     transform: translate(0, 0) scale(0) rotate(0deg);
   }
-  18% {
+  14% {
     opacity: 1;
+    transform: translate(calc(var(--x) * 0.18), calc(var(--y) * 0.18)) scale(2.1) rotate(80deg);
+  }
+  42% {
+    opacity: 1;
+    transform: translate(calc(var(--x) * 0.72), calc(var(--y) * 0.72)) scale(1.35) rotate(220deg);
   }
   100% {
     opacity: 0;
-    transform: translate(var(--x), var(--y)) scale(1.6) rotate(260deg);
+    transform: translate(var(--x), var(--y)) scale(0.45) rotate(420deg);
+  }
+}
+
+@keyframes shardThrow {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(0deg) scale(0.1);
+  }
+  12% {
+    opacity: 1;
+    transform: translate(calc(var(--x) * 0.16), calc(var(--y) * 0.16)) rotate(60deg) scale(2.4);
+  }
+  52% {
+    opacity: 1;
+    transform: translate(calc(var(--x) * 0.72), calc(var(--y) * 0.72)) rotate(var(--r)) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) rotate(var(--r)) scale(0.4);
+  }
+}
+
+@keyframes glitterFlash {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  18% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.55);
   }
 }
 
