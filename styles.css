@@ -1079,3 +1079,98 @@ footer {
     display: none;
   }
 }
+
+@media (max-width: 720px) {
+  .shell {
+    width: min(100% - 28px, 1120px);
+    padding-top: 18px;
+  }
+
+  .home-page {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .home-page .shell {
+    min-height: 100vh;
+    height: auto;
+    grid-template-rows: auto auto auto;
+    gap: 18px;
+  }
+
+  .nav {
+    gap: 6px;
+  }
+
+  .nav a,
+  .pill,
+  .cta,
+  .card-cta {
+    padding: 8px 10px;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+  }
+
+  .nav-start-prompt {
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 0.7rem;
+  }
+
+  .hero {
+    gap: 12px;
+    padding: 8px 0;
+  }
+
+  .brand-mark {
+    width: 74px;
+    height: 74px;
+  }
+
+  h1 {
+    font-size: clamp(2.35rem, 15vw, 4rem);
+  }
+
+  .subhead {
+    font-size: 0.68rem;
+    line-height: 1.55;
+  }
+
+  .intro-copy {
+    font-size: 0.88rem;
+  }
+
+  .section {
+    margin-top: 20px;
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+
+  .mini,
+  .card {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .business-footer {
+    gap: 5px;
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+    line-height: 1.45;
+  }
+
+  .scroll-rail {
+    right: 10px;
+  }
+
+  .scroll-rail a {
+    width: 34px;
+    height: 34px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    border-radius: 12px;
+  }
+}
