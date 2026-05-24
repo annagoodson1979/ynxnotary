@@ -60,19 +60,17 @@ a {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  gap: 7px;
+  gap: 16px;
 }
 
 .nav-start-prompt {
   color: #fff;
   font-family: "Cinzel", Georgia, serif;
-  font-size: 0.74rem;
+  font-size: 0.66rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  animation: startPromptGlow 4.8s ease-in-out infinite;
 }
 
-.nav a,
 .pill,
 .cta,
 .card-cta {
@@ -87,7 +85,15 @@ a {
   transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
-.nav a:hover,
+.nav a {
+  color: var(--text);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.35s ease;
+}
+
 .pill:hover,
 .cta:hover,
 .card-cta:hover {
@@ -96,16 +102,20 @@ a {
   color: var(--gold);
 }
 
-.nav a.nav-olivia {
-  border-color: rgba(212, 175, 55, 0.72);
-  background: rgba(212, 175, 55, 0.13);
+.nav a:hover {
   color: var(--gold);
-  box-shadow: 0 0 18px rgba(212, 175, 55, 0.14);
+}
+
+.nav a.nav-olivia {
+  border: 0;
+  background: transparent;
+  color: var(--gold);
+  box-shadow: none;
+  animation: oliviaNavGlow 5.5s ease-in-out infinite;
 }
 
 .nav a.nav-olivia:hover {
-  border-color: rgba(212, 175, 55, 0.95);
-  box-shadow: 0 0 26px rgba(212, 175, 55, 0.24);
+  color: #f6efe6;
 }
 
 .hero {
@@ -118,13 +128,13 @@ a {
 }
 
 .brand-mark {
-  width: 82px;
-  height: 82px;
+  width: 132px;
+  height: 132px;
   object-fit: contain;
-  border-radius: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: #0b0b0b;
-  padding: 8px;
+  border-radius: 26px;
+  border: 0;
+  background: transparent;
+  padding: 0;
 }
 
 .eyebrow {
@@ -1001,19 +1011,18 @@ footer {
   margin-top: 18px;
 }
 
-@keyframes startPromptGlow {
+@keyframes oliviaNavGlow {
   0%,
   100% {
-    color: #fff;
-    text-shadow: none;
-  }
-
-  45%,
-  65% {
     color: var(--gold);
     text-shadow:
-      0 0 10px rgba(212, 175, 55, 0.44),
-      0 0 22px rgba(212, 175, 55, 0.22);
+      0 0 10px rgba(212, 175, 55, 0.35),
+      0 0 18px rgba(212, 175, 55, 0.18);
+  }
+
+  50% {
+    color: #f4efe8;
+    text-shadow: none;
   }
 }
 
@@ -1100,10 +1109,9 @@ footer {
   }
 
   .nav {
-    gap: 6px;
+    gap: 9px;
   }
 
-  .nav a,
   .pill,
   .cta,
   .card-cta {
@@ -1113,9 +1121,13 @@ footer {
   }
 
   .nav-start-prompt {
-    flex-basis: 100%;
     text-align: center;
-    font-size: 0.7rem;
+    font-size: 0.58rem;
+  }
+
+  .nav a {
+    font-size: 0.52rem;
+    letter-spacing: 0.08em;
   }
 
   .hero {
@@ -1124,8 +1136,8 @@ footer {
   }
 
   .brand-mark {
-    width: 74px;
-    height: 74px;
+    width: 104px;
+    height: 104px;
   }
 
   h1 {
