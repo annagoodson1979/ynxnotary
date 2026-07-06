@@ -1,4 +1,4 @@
-
+﻿
 import { useEffect, useState } from 'react';
 import type { CSSProperties } from 'react';
 import type { Page } from '../types';
@@ -346,21 +346,21 @@ function About({ onNavigate }: AboutProps) {
           <h2 style={styles.sectionTitle}>My Approach</h2>
           <p style={styles.paragraph}>I believe notarization should feel:</p>
           <p style={styles.paragraph}>
-            <span style={styles.valueTitle}>Clear</span> — no confusion, no stress
+            <span style={styles.valueTitle}>Clear</span> &mdash; no confusion, no stress
           </p>
           <p style={styles.paragraph}>
-            <span style={styles.valueTitle}>Professional</span> — every detail checked and verified
+            <span style={styles.valueTitle}>Professional</span> &mdash; every detail checked and verified
           </p>
           <p style={styles.paragraph}>
-            <span style={styles.valueTitle}>Personal</span> — you&apos;re treated like a human, not a
+            <span style={styles.valueTitle}>Personal</span> &mdash; you&apos;re treated like a human, not a
             form
           </p>
           <p style={styles.paragraph}>
-            <span style={styles.valueTitle}>Protected</span> — your information is guarded at every
+            <span style={styles.valueTitle}>Protected</span> &mdash; your information is guarded at every
             step
           </p>
           <p style={styles.paragraph}>
-            <span style={styles.valueTitle}>Beautiful</span> — because presentation matters
+            <span style={styles.valueTitle}>Beautiful</span> &mdash; because presentation matters
           </p>
           <p style={styles.paragraph}>
             Your documents leave my hands looking polished, organized, and elevated with optional
@@ -420,42 +420,42 @@ function About({ onNavigate }: AboutProps) {
             <h2 style={styles.credentialsTitle}>Credentials & Certifications</h2>
             <ul style={styles.list}>
               <li style={styles.listItem}>
-                <span style={{ color: '#4CAF50', marginRight: '8px' }}>✓</span>
+                <span style={{ color: '#4CAF50', marginRight: '8px' }}>&#10003;</span>
                 Commissioned Notary Public
                 <div style={{ color: '#bfb8ae', fontSize: '0.92rem', marginTop: '4px' }}>
                   Authorized to perform notarial acts for personal, legal, and business documents.
                 </div>
               </li>
               <li style={styles.listItem}>
-                <span style={{ color: '#4CAF50', marginRight: '8px' }}>✓</span>
+                <span style={{ color: '#4CAF50', marginRight: '8px' }}>&#10003;</span>
                 NNA Certified Notary Signing Agent
                 <div style={{ color: '#bfb8ae', fontSize: '0.92rem', marginTop: '4px' }}>
                   Trained for loan packages, lender documents, and guided real-estate signing appointments.
                 </div>
               </li>
               <li style={styles.listItem}>
-                <span style={{ color: '#4CAF50', marginRight: '8px' }}>✓</span>
+                <span style={{ color: '#4CAF50', marginRight: '8px' }}>&#10003;</span>
                 NNA Certified RON
                 <div style={{ color: '#bfb8ae', fontSize: '0.92rem', marginTop: '4px' }}>
                   Prepared for secure remote online notarization when the document and requirements allow it.
                 </div>
               </li>
               <li style={styles.listItem}>
-                <span style={{ color: '#4CAF50', marginRight: '8px' }}>✓</span>
+                <span style={{ color: '#4CAF50', marginRight: '8px' }}>&#10003;</span>
                 Bonded
                 <div style={{ color: '#bfb8ae', fontSize: '0.92rem', marginTop: '4px' }}>
                   Covered by the required surety bond connected to commissioned notarial service.
                 </div>
               </li>
               <li style={styles.listItem}>
-                <span style={{ color: '#4CAF50', marginRight: '8px' }}>✓</span>
+                <span style={{ color: '#4CAF50', marginRight: '8px' }}>&#10003;</span>
                 Background Screened
                 <div style={{ color: '#bfb8ae', fontSize: '0.92rem', marginTop: '4px' }}>
                   Screened to support lender, title, and client confidence for sensitive appointments.
                 </div>
               </li>
               <li style={styles.listItem}>
-                <span style={{ color: '#4CAF50', marginRight: '8px' }}>✓</span>
+                <span style={{ color: '#4CAF50', marginRight: '8px' }}>&#10003;</span>
                 E&amp;O Insurance
                 <div style={{ color: '#bfb8ae', fontSize: '0.92rem', marginTop: '4px' }}>
                   Additional professional protection for notarial work and document handling.
