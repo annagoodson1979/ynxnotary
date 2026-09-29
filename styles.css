@@ -899,7 +899,7 @@ footer {
 .business-footer {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 0;
   width: 100%;
