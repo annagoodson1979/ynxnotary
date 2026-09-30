@@ -1,14 +1,10 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180" role="img" aria-labelledby="title">
-  <title id="title">Studio 21 trademark Notary</title>
-  <text
-    x="50%"
-    y="50%"
-    dominant-baseline="middle"
-    text-anchor="middle"
-    fill="#f4efe8"
-    font-family="Didot, 'Bodoni 72', 'Bodoni MT', 'Libre Bodoni', Georgia, 'Times New Roman', serif"
-    font-size="92"
-    font-weight="400"
-    letter-spacing="1"
-  >Studio 21™ | Notary</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" role="img" aria-labelledby="title">
+  <title id="title">Studio 21 Notary</title>
+  <text x="450" y="260" text-anchor="middle" fill="#314238" font-family="Didot, Bodoni MT, Georgia, serif" font-size="300" font-weight="600" letter-spacing="-24">21</text>
+  <text x="450" y="218" text-anchor="middle" fill="#ede9da" stroke="#445448" stroke-width="1.5" paint-order="stroke" font-family="Brush Script MT, Segoe Script, cursive" font-size="220" font-style="italic">Studio</text>
+  <text x="450" y="325" text-anchor="middle" fill="#314238" font-family="Georgia, serif" font-size="50" letter-spacing="24">NOTARY</text>
+  <text x="450" y="375" text-anchor="middle" fill="#314238" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="8">⠎⠞⠥⠙⠊⠕ ⠞⠺⠑⠝⠞⠽ ⠕⠝⠑</text>
+  <path d="M190 402h205m110 0h205" stroke="#314238" stroke-width="2"/>
+  <text x="450" y="411" text-anchor="middle" fill="#314238" font-family="Georgia, serif" font-size="26">✦</text>
+  <text x="450" y="455" text-anchor="middle" fill="#314238" font-family="Brush Script MT, Segoe Script, cursive" font-size="52" font-style="italic">Refined</text>
 </svg>
